@@ -8,12 +8,12 @@
     "typeorm": "typeorm-ts-node-commonjs",
     "migration:run": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:run",
     "migration:revert": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:revert",
-    "migration:generate": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:generate",
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/database/data-source.ts migration:generate ./src/database/migrations/Migration",
     "migration:create": "typeorm-ts-node-commonjs migration:create",
     "seed": "ts-node ./src/database/seeds/run-seeds.ts"
   },
   "devDependencies": {
-    "@types/node": "^22.15.3",
+    "@types/node": "^22.19.21",
     "nodemon": "^3.1.10",
     "ts-node": "10.9.2",
     "typescript": "^5.8.3"
@@ -28,8 +28,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "reflect-metadata": "^0.2.2",
     "mysql2": "^3.11.0",
+    "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.28",
     "zod": "^3.24.3"
   }

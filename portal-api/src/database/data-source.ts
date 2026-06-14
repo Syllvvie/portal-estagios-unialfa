@@ -9,7 +9,7 @@ import { Vaga } from "../models/Vaga";
 import { Candidatura } from "../models/Candidatura";
 import { Notificacao } from "../models/Notificacao";
 
-const migrationsPath = path.join(__dirname, "migrations");
+const migrationsPath = path.join(__dirname, "/migrations");
 
 export const AppDataSource = new DataSource({
   type: "mysql",
