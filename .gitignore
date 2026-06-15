@@ -1,1 +1,4 @@
 portal-api/node_modules/
+
+portal-java/target/
+portal-java/.idea
