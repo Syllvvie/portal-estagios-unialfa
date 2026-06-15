@@ -80,7 +80,6 @@ public class AlunoDao extends Dao {
     /** Importa lista de alunos de arquivo .txt (ra;nome;email;curso;periodo por linha) */
     public int importarDeTxt(List<String[]> linhas) {
         int importados = 0;
-        // Gera o hash uma unica vez para todo o lote (performance)
         String senhaHash = hashSenha(SENHA_PADRAO);
         var sql = "INSERT IGNORE INTO alunos (ra, nome, email, senha, curso, periodo, apto, ativo, primeiro_acesso) VALUES (?,?,?,?,?,?,1,1,1)";
         try {
