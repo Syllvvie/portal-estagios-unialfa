@@ -1,0 +1,817 @@
+/* ======================
+   VARIÁVEIS DE CORES
+====================== */
+:root {
+    --cor-preto: #1e1e1e;
+    --cor-cinza-texto: #858181;
+    --cor-azul-logo: #0056b3;
+    --cor-borda-clara: #EBEBEB;
+    --cor-azul-claro: #17A2B8;
+    /* Usado para estudante e bem-vindo */
+    --cor-cinza-escuro: #4D4D4D;
+    --cor-azul-principal: #0056A3;
+    /* Usado em botões e links de empresa */
+    --cor-branco: #ffffff;
+    --cor-sombra: #8b8b8b;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-text-black {
+    color: var(--cor-preto);
+}
+
+.logo-text-secun {
+    color: var(--cor-cinza-texto);
+}
+
+.logo-text-blue {
+    color: var(--cor-azul-logo);
+}
+
+header {
+    border-bottom: solid var(--cor-borda-clara) 2.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bem-vindo {
+    color: var(--cor-azul-claro);
+}
+
+.eclipse img {
+    width: 140px;
+}
+
+.logo-text-black,
+.logo-text-secun,
+.logo-text-blue {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sub-ti {
+    color: var(--cor-cinza-escuro);
+}
+
+.botao-for {
+    display: inline-block;
+    /* Necessário para o transform funcionar */
+    background-color: var(--cor-azul-principal);
+    color: var(--cor-branco);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+
+    /* Transição suave para o tamanho e cor */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+a:hover {
+    /* Aumenta o tamanho para 1.1 (10% maior) */
+    transform: scale(1.1);
+}
+
+.estudante a {
+    background-color: var(--cor-azul-claro);
+}
+
+.estudante,
+.empresa {
+    margin: 0 40px 0px 40px;
+    padding-bottom: 14px;
+    border-radius: 24px;
+    width: 440px;
+    box-shadow: 0px 2px 6px var(--cor-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ======================
+         empresa e estudante
+======================== */
+
+.formulario {
+    box-shadow: 0px 2px 6px var(--cor-sombra);
+    padding: 45px 30px 50px 30px;
+}
+
+.formulario button {
+    background-color: var(--cor-azul-principal);
+}
+
+.formulario .button {
+    background-color: var(--cor-azul-claro);
+}
+
+.formulario a {
+    border: solid var(--cor-azul-principal);
+    color: var(--cor-azul-principal);
+}
+
+/* Remove a borda azul e o brilho ao clicar no grupo de input */
+.input-group:focus-within .form-control {
+    background-color: var(--cor-branco);
+    border-color: var(--cor-borda-clara);
+    box-shadow: none;
+}
+
+.btn-estudante {
+    background-color: var(--cor-azul-claro);
+}
+
+.gmail {
+    align-items: center;
+    width: 300px;
+    background-color: var(--cor-branco);
+}
+
+.box-empresa img {
+    width: 100px;
+}
+
+/* Esconde sempre a caixinha de seleção */
+.menu-checkbox {
+    display: none;
+}
+
+/* Esconde o ícone do hambúrguer em computadores (ecrãs grandes) */
+.menu-hamburguer {
+    display: none;
+}
+
+/* ========================================================
+   MODO TELEMÓVEL / TABLET (Ecrãs menores que 992px)
+======================================================== */
+
+/* ==========================
+portal de estagios
+==========================
+*/
+
+
+.nav-estagios {
+    border-right: 4px solid var(--cor-borda-clara);
+    margin: 0;
+    width: 200px;
+    padding-bottom: 30px;
+}
+
+.box-inicio {
+
+    padding: 0px 10px 0px 10px;
+
+}
+
+
+
+
+
+.nav-esagios-texto {
+    color: var(--cor-azul-principal);
+}
+
+.nav-esagios-texto-sair {
+    color: var(--cor-cinza-escuro);
+}
+
+
+/* cadastro */
+
+
+body {
+    background-color: #f8f9fa;
+}
+
+.texto-azul {
+    color: #0056A3;
+}
+
+.bg-azul {
+    background-color: #0056A3;
+}
+
+.caixa-informativa {
+    border: 3px solid #0056A3;
+    background-color: #f8f9fa;
+}
+
+.icone-redondo {
+    width: 45px;
+    height: 45px;
+    background-color: #a4c2f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0056A3;
+}
+
+:root {
+    --cor-azul-principal: #0056A3;
+    --cor-borda-clara: #EBEBEB;
+}
+
+body {
+    background-color: #f5f7fb;
+}
+
+/* ── Header ── */
+header {
+    border-bottom: 2.5px solid var(--cor-borda-clara);
+}
+
+/* ── Sidebar ── */
+.nav-estagios {
+    width: 220px;
+    flex-shrink: 0;
+    border-right: 3px solid var(--cor-borda-clara);
+}
+
+.nav-estagios a {
+    display: flex;
+    align-items: center;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #6c757d;
+    transition: background-color .2s;
+    border-left: 4px solid transparent;
+}
+
+.nav-estagios a:hover {
+    background-color: #f0f4f8;
+    transform: none;
+}
+
+.nav-estagios a.ativo {
+    background-color: #f0f4f8;
+    border-left: 4px solid var(--cor-azul-principal);
+    color: var(--cor-azul-principal);
+}
+
+/* Container principal do menu */
+.nav-estagios-aluno {
+    width: 220px;
+    flex-shrink: 0;
+    border-right: 3px solid var(--cor-borda-clara, #EBEBEB);
+    background-color: #ffffff;
+    padding-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Links do menu em estado normal */
+.nav-estagios-aluno a {
+    display: flex;
+    align-items: center;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #6c757d;
+    /* Cinza para itens não selecionados */
+    transition: background-color .2s;
+    border-left: 4px solid transparent;
+}
+
+/* Efeito ao passar o mouse */
+.nav-estagios-aluno a:hover {
+    background-color: #f0f4f8;
+    transform: none;
+}
+
+/* 🟢 ITEM ATIVO (Selecionado) - Borda e Cor Azul Claro */
+.nav-estagios-aluno a.ativo {
+    background-color: #f0f4f8;
+    border-left: 4px solid #17a2b8;
+    /* Borda Azul Claro */
+    color: #17a2b8;
+    /* Texto Azul Claro */
+}
+
+/* 🟢 Força o texto interno a ficar Azul Claro quando ativo */
+.nav-estagios-aluno a.ativo .nav-esagios-texto-aluno {
+    color: #17a2b8;
+}
+
+
+body {
+    background-color: #f4f6f9;
+}
+
+/* ── Sidebar do estudante ── */
+.nav-estagios {
+    width: 220px;
+    flex-shrink: 0;
+    background: #fff;
+    border-right: 3px solid var(--cor-borda-clara, #EBEBEB);
+    min-height: 100%;
+}
+
+.nav-estagios a {
+    display: flex;
+    align-items: center;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #6c757d;
+    transition: background .2s;
+}
+
+.nav-estagios a:hover {
+    background-color: #f0f4f8;
+    transform: none;
+}
+
+.nav-estagios a.ativo {
+    background-color: #f0f4f8;
+    border-left: 4px solid var(--cor-azul-claro, #17A2B8);
+    color: var(--cor-azul-claro, #17A2B8);
+}
+
+.nav-estagios a img {
+    width: 22px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+/* ── Cards das vagas ── */
+.card-vaga {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: box-shadow .2s;
+    cursor: pointer;
+}
+
+.card-vaga:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+}
+
+.icone-vaga-box {
+    width: 48px;
+    height: 48px;
+    background: #f0f4f8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icone-vaga-box i {
+    font-size: 1.35rem;
+    color: var(--cor-azul-principal, #0056A3);
+}
+
+/* ── Box principal ── */
+.box-painel {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.box-painel-header {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid #f1f3f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ── Badge status ── */
+.badge-status {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* ── Separador pontilhado ── */
+.dot-sep {
+    color: #adb5bd;
+    margin: 0 4px;
+}
+
+/* ── Notificação no sino ── */
+.btn-sino {
+    position: relative;
+}
+
+.btn-sino .badge-sino {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 50%;
+    font-size: .65rem;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+/* =======================================================
+   HAMBÚRGUER E MODO CELULAR (Menu Estudante)
+======================================================= */
+
+.menu-checkbox {
+    display: none;
+}
+
+.menu-hamburguer {
+    display: none;
+}
+
+/* ── Grafismo topo direito ── */
+.bg-grafismo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 220px;
+    background: radial-gradient(circle at top right, #17a2b8 0%, transparent 65%);
+    opacity: .15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ── Tabela ── */
+.tabela-header {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .6px;
+    color: #8a94a6;
+    background-color: #f8fafc;
+}
+
+.linha-processo {
+    transition: background-color .2s;
+}
+
+.linha-processo:hover {
+    background-color: #f8fafc;
+}
+
+.icone-vaga {
+    width: 46px;
+    height: 46px;
+    background-color: #dbeafe;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Badge status */
+.badge-ativa {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.badge-fechada {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* ── Hambúrguer (mobile) ── */
+.menu-checkbox {
+    display: none;
+}
+
+.menu-hamburguer {
+    display: none;
+}
+
+body {
+    background-color: #f8f9fa;
+    /* Fundo cinza super claro */
+    overflow-x: hidden;
+}
+
+/* Ajuste do container principal para evitar scroll vertical excessivo */
+.content-wrapper {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Estilo dos Cards exatos ao da imagem */
+.card-perfil {
+    background: #ffffff;
+    border: 1px solid var(--cor-borda-clara, #dee2e6);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    /* Faz os cards da mesma linha terem a mesma altura */
+}
+
+.card-title-perfil {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #212529;
+}
+
+/* Logo Quadrada Grupo 2 */
+.logo-grupo {
+    width: 110px;
+    height: 110px;
+    background-color: var(--cor-azul-principal, #0056A3);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.logo-grupo span:first-child {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.logo-grupo span:last-child {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+/* Textos e Labels */
+.text-info-label {
+    font-size: 0.85rem;
+    color: #495057;
+    margin-bottom: 6px;
+}
+
+.text-info-value {
+    font-size: 0.85rem;
+    color: #212529;
+}
+
+.icon-small {
+    font-size: 1.1rem;
+    color: #6c757d;
+    width: 24px;
+    text-align: center;
+}
+
+/* Caixinhas de Estatísticas (As 4 caixinhas pequenas) */
+.stat-box {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px 10px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-box i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 2px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.2;
+}
+
+@media (max-width: 991px) {
+
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 1000;
+        background: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    }
+
+    /* 🟢 Linhas do Hambúrguer - Cor Azul Claro */
+    .menu-hamburguer .linha {
+        width: 24px;
+        height: 3px;
+        background-color: #17a2b8;
+        /* Cor alterada aqui */
+        border-radius: 2px;
+        transition: all .3s;
+    }
+
+    /* Esconde o menu fora da tela no celular */
+    .nav-estagios-aluno {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 999;
+        padding-top: 70px;
+        transition: left .35s ease;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, .1);
+        overflow-y: auto;
+    }
+
+    /* Quando clica no hambúrguer, o menu desliza para dentro */
+    .menu-checkbox:checked~.nav-estagios-aluno {
+        left: 0;
+    }
+
+    /* Animação do X no hambúrguer */
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* 1. Desenha o botão do hambúrguer e coloca-o no canto superior esquerdo */
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        /* Fica acima de tudo */
+        background-color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    /* As 3 linhas azuis do hambúrguer */
+    .menu-hamburguer .linha {
+        width: 25px;
+        height: 3px;
+        background-color: var(--cor-azul-logo, #0056A3);
+        /* Usa o seu azul */
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* 2. Atira o menu lateral para fora do ecrã (escondido à esquerda) */
+    .nav-estagios {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* -100% esconde o menu totalmente */
+        width: 280px;
+        height: 100vh;
+        z-index: 999;
+        /* Fica abaixo do botão hambúrguer */
+        padding-top: 80px;
+        /* Dá espaço para não tapar o botão hambúrguer */
+        transition: left 0.4s ease;
+        /* Animação de deslizar */
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        /* Sombra suave para destacar */
+        overflow-y: auto;
+        /* Permite rolar se o menu for muito comprido */
+    }
+
+    /* 3. QUANDO CLICAR NO HAMBÚRGUER: O menu desliza para dentro (left: 0) */
+    .menu-checkbox:checked~.nav-estagios {
+        left: 0;
+    }
+
+    /* 4. ANIMAÇÃO: Transforma o hambúrguer num "X" */
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* =============================
+    RESPONSIVIDADE
+============================= */
+
+@media (max-width: 477px) {
+    header {
+        display: flex;
+        justify-content: space-around !important;
+        flex-wrap: wrap;
+    }
+}
+
+/* Corrigido de 192px para 992px (Telas de tablet/celular grandes) */
+@media (max-width: 992px) {
+
+    /* Centraliza a imagem principal e os textos (Login, Publique vagas...) */
+    .section-empresa {
+        text-align: center;
+    }
+
+    /* Como os itens de baixo usam 'd-flex', text-align não funciona neles. 
+       Precisamos usar justify-content para centralizar os blocos no meio da tela */
+    .section-empresa .publique,
+    .section-empresa .gerencie,
+    .section-empresa .encontre {
+        justify-content: center;
+    }
+
+    /* Mantém o texto dentro do bloquinho alinhado à esquerda para não ficar bagunçado em relação ao ícone */
+    .section-empresa .publique-text {
+        text-align: left;
+    }
+}
+
+
+
+@media (max-width: 991px) {
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 1000;
+        background: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    }
+
+    .menu-hamburguer .linha {
+        width: 24px;
+        height: 3px;
+        background-color: var(--cor-azul-principal);
+        border-radius: 2px;
+        transition: all .3s;
+    }
+
+    .nav-estagios {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 260px;
+        height: 100vh;
+        z-index: 999;
+        padding-top: 70px;
+        transition: left .35s ease;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, .1);
+        overflow-y: auto;
+    }
+
+    .menu-checkbox:checked~.nav-estagios {
+        left: 0;
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-checkbox:checked~.menu-hamburguer .linha:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
