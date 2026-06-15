@@ -324,7 +324,7 @@ portal-estagios-unialfa/
 
 ## Integrantes da Equipe
 | Joao Vitor Paiva Borges |
-|  |
+| Gabriel Priori de Morais |
 |  |
 |  |
 |  |
