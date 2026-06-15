@@ -11,7 +11,6 @@ public class AlunoDao extends Dao {
 
     private static final String SENHA_PADRAO = "UniAlfa@2026";
 
-    /** Gera hash bcrypt compativel com o Node.js (mesmo algoritmo $2a$) */
     private static String hashSenha(String senha) {
         return BCrypt.hashpw(senha, BCrypt.gensalt(8));
     }
@@ -47,13 +46,13 @@ public class AlunoDao extends Dao {
         ps.setString(1, a.getRa());
         ps.setString(2, a.getNome());
         ps.setString(3, a.getEmail());
-        ps.setString(4, hashSenha(SENHA_PADRAO)); // gera hash em runtime
+        ps.setString(4, hashSenha(SENHA_PADRAO));
         ps.setString(5, a.getTelefone());
         ps.setString(6, a.getCurso());
         ps.setObject(7, a.getPeriodo());
         ps.setBoolean(8, a.isApto());
         ps.setBoolean(9, a.isAtivo());
-        ps.setBoolean(10, true); // primeiro_acesso = true sempre
+        ps.setBoolean(10, true);
         ps.execute();
     }
 
