@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="row align-items-center justify-content-center gap-5">
 
             <div class="col-12 col-lg-5 section-empresa">
-                <img src="../assets/imagens/Ícone da empresa.png" alt="Ícone da empresa" class="mb-3">
+                <img src="../assets/imagens/Icone-da-empresa.png" alt="Ícone da empresa" class="mb-3">
                 <p class="fs-1 mb-2">Login de <br><span class="fs-1 fw-bold" style="color: #0056b3;">Empresa</span></p>
                 <p class="text-muted">Publique vagas, gerencie processos seletivos e encontre os melhores talentos.</p>
 

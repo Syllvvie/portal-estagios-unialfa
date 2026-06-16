@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="row align-items-center justify-content-center gap-5">
 
             <div class="col-12 col-lg-5 section-empresa">
-                <img src="../assets/imagens/Ícone do estudante.png" alt="Ícone do estudante" class="mb-3">
+                <img src="../assets/imagens/Icone-do-estudante.png" alt="Ícone do estudante" class="mb-3">
                 <p class="fs-1 mb-2">Login de <br><span class="fs-1 fw-bold" style="color: #17A2B8;">Estudante</span></p>
                 <p class="text-muted">Acesse com seu RA e senha para encontrar vagas de estágio.</p>
 
