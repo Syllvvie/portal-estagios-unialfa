@@ -1,4 +1,5 @@
 <?php
+// Descobre o nome do arquivo que está sendo acessado no momento
 $paginaAtual = basename($_SERVER['PHP_SELF']);
 ?>
 
