@@ -31,14 +31,14 @@ session_start();
         <div class=" d-flex justify-content-center flex-wrap gap-4 mt-5">
 
             <div class="empresa text-center border p-4 ">
-                <img src="assets/imagens/Ícone da empresa.png" alt="Ícone da empresa" class="mb-3">
+                <img src="assets/imagens/Icone-da-empresa.png" alt="Ícone da empresa" class="mb-3">
                 <h2>Empresa</h2>
                 <p class="p-2">Publique vagas, gerencie processos e encontre os melhores talentos</p>
                 <a href="empresa/loginEmpresa.php" class="botao-for">Entrar como Empresa ➔</a>
             </div>
 
             <div class="estudante text-center border p-4 ">
-                <img src="assets/imagens/Ícone do estudante.png" alt="Ícone do estudante" class="mb-3">
+                <img src="assets/imagens/Icone-do-estudante.png" alt="Ícone do estudante" class="mb-3">
                 <h2>Estudante</h2>
                 <p class="p-2">Encontre oportunidades, cadastre seu currículo e inicie sua carreira</p>
                 <a href="estudante/loginEstudante.php" class="botao-for">Entrar como Estudante ➔</a>
