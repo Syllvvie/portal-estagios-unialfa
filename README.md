@@ -326,8 +326,8 @@ portal-estagios-unialfa/
 | Joao Vitor Paiva Borges |
 | Gabriel Priori de Morais |
 | James Soares Silva |
-|  |
-|  |
+| Vitor Francisco |
+| Thiago José da Silva Braz |
 
 ---
 
