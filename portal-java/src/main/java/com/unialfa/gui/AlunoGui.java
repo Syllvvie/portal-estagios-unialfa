@@ -8,20 +8,20 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.List;
 
 public class AlunoGui extends JFrame implements PainelDefault {
 
     private final AlunoService service;
 
-    private final JTextField idField      = new JTextField(6);
-    private final JTextField raField      = new JTextField(6);
-    private final JTextField nomeField    = new JTextField(20);
-    private final JTextField emailField   = new JTextField(20);
-    private final JTextField cursoField   = new JTextField(20);
-    private final JTextField periodoField = new JTextField(4);
-    private final JCheckBox  aptoCheck    = new JCheckBox("Apto para estagio");
-    private final JCheckBox  ativoCheck   = new JCheckBox("Ativo");
+    private final JTextField idField       = new JTextField(6);
+    private final JTextField raField       = new JTextField(6);
+    private final JTextField nomeField     = new JTextField(20);
+    private final JTextField emailField    = new JTextField(20);
+    private final JTextField telefoneField = new JTextField(15);
+    private final JTextField cursoField    = new JTextField(20);
+    private final JTextField periodoField  = new JTextField(4);
+    private final JCheckBox  aptoCheck     = new JCheckBox("Apto para estagio");
+    private final JCheckBox  ativoCheck    = new JCheckBox("Ativo");
 
     private final JButton btnNovo     = new JButton("Novo");
     private final JButton btnSalvar   = new JButton("Salvar");
@@ -33,7 +33,7 @@ public class AlunoGui extends JFrame implements PainelDefault {
     public AlunoGui(AlunoService service) {
         this.service = service;
         setTitle("Gestao de Alunos");
-        setSize(900, 520);
+        setSize(1000, 540);
         setLocationRelativeTo(null);
         construirFormulario();
         construirTabela();
@@ -48,7 +48,7 @@ public class AlunoGui extends JFrame implements PainelDefault {
         aptoCheck.setSelected(true);
         ativoCheck.setSelected(true);
 
-        // Limite de 6 caracteres no campo RA
+        // Limite de 6 dígitos no campo RA
         raField.setDocument(new javax.swing.text.PlainDocument() {
             @Override
             public void insertString(int offs, String str, javax.swing.text.AttributeSet a)
@@ -59,14 +59,26 @@ public class AlunoGui extends JFrame implements PainelDefault {
             }
         });
 
-        painelAdd(panel, label("ID:"), 0, 0);       painelAdd(panel, idField, 1, 0);
-        painelAdd(panel, label("RA: *"), 0, 1); painelAdd(panel, raField, 1, 1);
-        painelAdd(panel, label("Nome: *"), 2, 1);   painelAdd(panel, nomeField, 3, 1);
-        painelAdd(panel, label("E-mail:"), 0, 2);   painelAdd(panel, emailField, 1, 2);
-        painelAdd(panel, label("Curso:"), 2, 2);    painelAdd(panel, cursoField, 3, 2);
-        painelAdd(panel, label("Periodo:"), 0, 3);  painelAdd(panel, periodoField, 1, 3);
-        painelAdd(panel, aptoCheck, 2, 3);
-        painelAdd(panel, ativoCheck, 3, 3);
+        painelAdd(panel, label("ID:"), 0, 0);
+        painelAdd(panel, idField, 1, 0);
+
+        painelAdd(panel, label("RA: *"), 0, 1);
+        painelAdd(panel, raField, 1, 1);
+        painelAdd(panel, label("Nome: *"), 2, 1);
+        painelAdd(panel, nomeField, 3, 1);
+
+        painelAdd(panel, label("E-mail:"), 0, 2);
+        painelAdd(panel, emailField, 1, 2);
+        painelAdd(panel, label("Telefone:"), 2, 2);
+        painelAdd(panel, telefoneField, 3, 2);
+
+        painelAdd(panel, label("Curso:"), 0, 3);
+        painelAdd(panel, cursoField, 1, 3);
+        painelAdd(panel, label("Periodo:"), 2, 3);
+        painelAdd(panel, periodoField, 3, 3);
+
+        painelAdd(panel, aptoCheck, 1, 4);
+        painelAdd(panel, ativoCheck, 2, 4);
 
         var botoesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 4));
         btnNovo.addActionListener(this::novo);
@@ -79,7 +91,7 @@ public class AlunoGui extends JFrame implements PainelDefault {
         botoesPanel.add(btnImportar);
 
         var gcBtn = new GridBagConstraints();
-        gcBtn.gridx = 0; gcBtn.gridy = 4; gcBtn.gridwidth = 4;
+        gcBtn.gridx = 0; gcBtn.gridy = 5; gcBtn.gridwidth = 4;
         gcBtn.insets = new Insets(8, 8, 4, 8);
         panel.add(botoesPanel, gcBtn);
 
@@ -98,12 +110,13 @@ public class AlunoGui extends JFrame implements PainelDefault {
 
     private void atualizarTabela() {
         var model = new DefaultTableModel(
-            new String[]{"ID", "RA", "Nome", "E-mail", "Curso", "Periodo", "Apto", "Ativo"}, 0);
+            new String[]{"ID", "RA", "Nome", "E-mail", "Telefone", "Curso", "Periodo", "Apto", "Ativo"}, 0);
         for (Aluno a : service.listar()) {
             model.addRow(new Object[]{
                 a.getId(), a.getRa(), a.getNome(), a.getEmail(),
-                a.getCurso(),
-                a.getPeriodo() != null ? a.getPeriodo() + "o" : "-",
+                a.getTelefone() != null ? a.getTelefone() : "-",
+                a.getCurso()    != null ? a.getCurso()    : "-",
+                a.getPeriodo()  != null ? a.getPeriodo() + "o" : "-",
                 a.isApto()  ? "Sim" : "Nao",
                 a.isAtivo() ? "Ativo" : "Inativo"
             });
@@ -118,11 +131,12 @@ public class AlunoGui extends JFrame implements PainelDefault {
         raField.setText(s(table.getValueAt(row, 1)));
         nomeField.setText(s(table.getValueAt(row, 2)));
         emailField.setText(s(table.getValueAt(row, 3)));
-        cursoField.setText(s(table.getValueAt(row, 4)));
-        var per = s(table.getValueAt(row, 5)).replace("o", "");
+        telefoneField.setText(s(table.getValueAt(row, 4)).equals("-") ? "" : s(table.getValueAt(row, 4)));
+        cursoField.setText(s(table.getValueAt(row, 5)).equals("-") ? "" : s(table.getValueAt(row, 5)));
+        var per = s(table.getValueAt(row, 6)).replace("o", "");
         periodoField.setText(per.equals("-") ? "" : per);
-        aptoCheck.setSelected("Sim".equals(table.getValueAt(row, 6)));
-        ativoCheck.setSelected("Ativo".equals(table.getValueAt(row, 7)));
+        aptoCheck.setSelected("Sim".equals(table.getValueAt(row, 7)));
+        ativoCheck.setSelected("Ativo".equals(table.getValueAt(row, 8)));
     }
 
     private void novo(ActionEvent e) { limpar(); atualizarTabela(); }
@@ -142,6 +156,7 @@ public class AlunoGui extends JFrame implements PainelDefault {
             a.setRa(raField.getText().trim());
             a.setNome(nomeField.getText().trim());
             a.setEmail(emailField.getText().trim());
+            if (!telefoneField.getText().isBlank()) a.setTelefone(telefoneField.getText().trim());
             a.setCurso(cursoField.getText().trim());
             if (!periodoField.getText().isBlank()) a.setPeriodo(Integer.valueOf(periodoField.getText().trim()));
             a.setApto(aptoCheck.isSelected());
@@ -179,7 +194,8 @@ public class AlunoGui extends JFrame implements PainelDefault {
 
     private void limpar() {
         idField.setText(""); raField.setText(""); nomeField.setText("");
-        emailField.setText(""); cursoField.setText(""); periodoField.setText("");
+        emailField.setText(""); telefoneField.setText(""); cursoField.setText("");
+        periodoField.setText("");
         aptoCheck.setSelected(true); ativoCheck.setSelected(true);
     }
 

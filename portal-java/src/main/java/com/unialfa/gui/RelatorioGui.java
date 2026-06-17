@@ -10,7 +10,6 @@ public class RelatorioGui extends JFrame implements PainelDefault {
 
     private final RelatorioService service;
 
-    // Combo para escolher o formato
     private final JComboBox<String> comboFormato = new JComboBox<>(new String[]{"TXT", "CSV", "PDF"});
 
     public RelatorioGui(RelatorioService service) {
